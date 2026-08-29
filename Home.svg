@@ -1,17 +1,25 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TacoliyxV2</title>
-</head>
+<svg xmlns="http://w3.org" viewBox="0 0 800 600" width="100%" height="100%">
+  <!-- Definition for styles and fonts -->
+  <defs>
+    <style>
+      .bg { fill: #ffffff; }
+      .heading { font-family: system-ui, -apple-system, sans-serif; font-size: 24px; font-weight: bold; fill: #000000; }
+      .body-text { font-family: system-ui, -apple-system, sans-serif; font-size: 16px; fill: #333333; }
+    </style>
+  </defs>
 
-<body>
-       <script src="https://jsdelivr.net"></script>
+  <!-- Background -->
+  <rect width="800" height="600" class="bg" />
 
-    <h2>Welcome to Tacoliyx V2 — This site is currently under active development.</h2>
-    <div>
-        <p>Im working hard ok I know school just started but im trying ok this is gonna be way better than google sites.</p>
-    </div>
+  <!-- Page Content -->
+  <g transform="translate(40, 60)">
+    <!-- <h2> Heading -->
+    <text x="0" y="0" class="heading">Welcome to Tacoliyx V2 — This site is currently under active development.</text>
     
-</body>
-</html>
+    <!-- <div> and <p> Paragraph text wrapping -->
+    <text x="0" y="40" class="body-text">
+      <tspan x="0" dy="0">Im working hard ok I know school just started but im trying ok this is gonna be way better than</tspan>
+      <tspan x="0" dy="24">google sites. Please check back later for updates!</tspan>
+    </text>
+  </g>
+</svg>
