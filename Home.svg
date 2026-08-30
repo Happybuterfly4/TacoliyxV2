@@ -9,6 +9,16 @@
         .paragraph{fill:#cbd5e1;font-family:Inter, Arial, sans-serif;font-size:10px}
     </style>
 
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4G2G0SQSXP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-4G2G0SQSXP');
+</script>
+
     <rect class="bg" x="0" y="0" width="700" height="300"/>
 
     <g transform="translate(40,40)">
