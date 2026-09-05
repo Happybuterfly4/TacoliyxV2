@@ -1,0 +1,96 @@
+```html
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <title>about:blank</title>
+
+  <script src="Build/UnityLoader.js"></script>
+
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #000;
+    }
+
+    #unityContainer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    #unityContainer canvas {
+      display: block;
+      width: 100% !important;
+      height: 100% !important;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="unityContainer"></div>
+
+  <script>
+    // Start Unity
+    var unityInstance = UnityLoader.instantiate(
+      "unityContainer",
+      "Build/baldsi basics webport.json"
+    );
+
+    // Resize Unity to match the browser
+    function resizeUnity() {
+      var container = document.getElementById("unityContainer");
+
+      var width = window.innerWidth;
+      var height = window.innerHeight;
+
+      container.style.width = width + "px";
+      container.style.height = height + "px";
+
+      var canvas = container.querySelector("canvas");
+
+      if (canvas) {
+        canvas.style.width = width + "px";
+        canvas.style.height = height + "px";
+      }
+    }
+
+    // Browser/window resize
+    window.addEventListener("resize", function () {
+      resizeUnity();
+
+      // Unity sometimes needs a little time to update
+      setTimeout(resizeUnity, 100);
+      setTimeout(resizeUnity, 500);
+    });
+
+    // Fullscreen enter/exit
+    document.addEventListener("fullscreenchange", function () {
+      setTimeout(resizeUnity, 100);
+      setTimeout(resizeUnity, 500);
+    });
+
+    // Initial size
+    window.addEventListener("load", function () {
+      resizeUnity();
+    });
+  </script>
+
+</body>
+
+</html>
+```
